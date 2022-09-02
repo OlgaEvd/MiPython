@@ -3,7 +3,6 @@
 # print ("МАКСИМУМ:", max (num))
 
 #Вариант2
-
 print(max([int (i) for i in input ("Введите целые числа через пробел: ").split ()[:5]]))
 
 
