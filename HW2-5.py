@@ -17,8 +17,17 @@
 
 # Метод № 2: использование random.shuffle()
  
+# import random
+# test_list = [1, 2, 3, 4, 5]
+# print ("The original list is : " + str(test_list))
+# random.shuffle(test_list)
+# print ("The shuffled list is : " +  str(test_list))
+
+
+
+#Метод № 3: использование random.sample()
 import random
 test_list = [1, 2, 3, 4, 5]
 print ("The original list is : " + str(test_list))
-random.shuffle(test_list)
-print ("The shuffled list is : " +  str(test_list))
+res = random.sample(test_list, len(test_list))
+print ("The shuffled list is : " +  str(res))
