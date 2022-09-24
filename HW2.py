@@ -35,23 +35,47 @@
 
 
 # Задача 3 Задайте список из n чисел последовательности $(1+\frac 1 n)^n$ и выведите на экран их сумму.
-n = int(input('Введите количество чисел в последовательности: ')) 
+# n = int(input('Введите количество чисел в последовательности: ')) 
 
-def list (n):
+# def list (n):
 
-    return[round((1 + 1 / x)**x, 2) for x in range (1, n + 1)]   
+#     return[round((1 + 1 / x)**x, 2) for x in range (1, n + 1)]   
         
-print(list(n))
-print(round(sum(list(n))))
+# print(list(n))
+# print(round(sum(list(n))))
 
 
 
-# Задача 4 (ЕСЛИ НЕ ЗНАЕТЕ КАК ДЕЛАТЬ, МОЖНО НЕ ВЫПОЛНЯТЬ)
+# Задача 4 
 # Задайте список из N элементов, заполненных числами из промежутка [-N, N]. 
 # Найдите произведение элементов на указанных позициях. 
 # Позиции хранятся в файле file.txt в одной строке одно число.
 
+N = int(input("Введите число N:"))
 
+from random import randint 
+list1 = [randint(-N,N) for x in range(N)]
+print(f"Заданный список = {list1}")
+
+with open('file.txt', 'w') as data:
+    data.write('0\n')
+    data.write('1\n')
+    data.write('2\n') 
+    data.write('4\n')     #Добавление необходимых позиций 
+
+
+def readfile():
+    with open ("file.txt") as data:
+        index = list (map(int, data.readlines()))
+        print(f"Значения из файла={index}")
+        return index
+
+f = readfile()
+product = 1
+for i in range (len(f)):
+    product *= list1 [f[i]]
+
+print(f"Произведение элементов списка = {product}")
 
 # Задача 5 Реализуйте алгоритм перемешивания списка.
 
